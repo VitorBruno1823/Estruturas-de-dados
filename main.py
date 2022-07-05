@@ -24,18 +24,20 @@ def retirar_dados():
         input()
 
     else:
-        saida = p.dados
-        p.dados[p.topo] = 0
         p.topo -= 1
-        return saida
+        saida = p.dados[p.topo]
+        p.dados[p.topo] = 0
+        print("\n" + str(saida))
 
 sair: int = 0
 while sair != 1:
     opcao = int(input("**********MENU**********\nDigite o numero correspondente a opção desejada\n1 - Adicionar dados\n2 - Retirar e retornar o dado\n"))
     if opcao == 1:
         inserir_dados()
-    if opcao == 2:
+    elif opcao == 2:
         retirar_dados()
+    else:
+        print(p.dados)
 
     sair = int(input("Deseja sair? (1 - Sim/ 2 - Não)\n"))
 exit()
